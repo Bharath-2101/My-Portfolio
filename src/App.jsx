@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import gsap from "gsap";
 import MorphSVGPlugin from "gsap/MorphSVGPlugin";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(MorphSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin, SplitText, ScrollTrigger);
 
 const App = () => {
   return (

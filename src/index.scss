@@ -62,6 +62,9 @@ body {
   color: #fff;
   overflow-x: hidden;
   font-family: "Bharath Sans", sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 a {

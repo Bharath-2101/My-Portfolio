@@ -2,7 +2,7 @@ const NavLinks = [
   { title: "HOME" },
   { title: "ABOUT ME" },
   { title: "PROJECTS" },
-  { title: "CONTACT" },
+  { title: "CONNECT" },
 ];
 
 const SocialMedia = [
