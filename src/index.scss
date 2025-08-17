@@ -1,0 +1,91 @@
+/***************fonts***************/
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-Italic.otf") format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Bharath Sans";
+  src: url("/fonts/NeueMontreal-BoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #121212;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: "Bharath Sans", sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+.UnderlineEffect {
+  position: relative;
+  &::after {
+    content: "";
+    height: 0.5px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    transform-origin: right;
+    transform: scaleX(0);
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
