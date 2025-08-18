@@ -63,6 +63,17 @@ const HeroSection = () => {
         ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
 
+    gsap.to(textSplits.mainTitle.chars, {
+      duration: 2,
+      delay: 1.5,
+      repeatDelay: 1,
+      stagger: 0.3,
+      ease: "cubic-bezier(0.76, 0, 0.24, 1)",
+      repeat: -1,
+      color: "transparent",
+      yoyo: true,
+      yoyoEase: "cubic-bezier(0.76, 0, 0.24, 1)",
+    });
     return () => {
       Object.values(textSplits).forEach((split) => split.revert());
     };
