@@ -7,6 +7,10 @@ const useStore = create((set) => ({
 
   currentPage: "HOME",
   setCurrentPage: (page) => set({ currentPage: page }),
+
+  height:
+    window.innerHeight +
+    ((window.screen.height - window.innerHeight) * 62) / 100,
 }));
 
 export default useStore;
