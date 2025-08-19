@@ -4,9 +4,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const SideMenuCurve = () => {
+  const isDesktop = window.innerWidth >= 900;
   const pathRef = useRef();
-  const [height, setHeight] = useState(window.innerHeight);
-  const { hamburgerClick } = useStore();
+  const { hamburgerClick, height } = useStore();
+  const Curveheight = isDesktop ? window.innerHeight : height;
 
   useGSAP(() => {
     if (hamburgerClick) {
@@ -23,12 +24,12 @@ const SideMenuCurve = () => {
       });
     }
   }, [hamburgerClick]);
-  const inital = `M100 0 L100 ${height} Q-100 ${height / 2} 100 0`;
-  const final = `M100 0 L100 ${height} Q100 ${height / 2} 100 0`;
+  const inital = `M100 0 L100 ${Curveheight} Q-100 ${Curveheight / 2} 100 0`;
+  const final = `M100 0 L100 ${Curveheight} Q100 ${Curveheight / 2} 100 0`;
 
   return (
     <svg
-      style={{ height: `${height}px`, width: "100px" }}
+      style={{ height: `${Curveheight}px`, width: "100px" }}
       className="absolute top-0 left-[-99px]"
     >
       <path ref={pathRef} d={inital} fill="#485e97" />

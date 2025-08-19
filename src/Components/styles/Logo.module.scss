@@ -1,5 +1,5 @@
 .LogoCon {
-  position: fixed;
+  position: absolute;
   top: 30px;
   left: 30px;
   height: clamp(4rem, 4.5vw, 5rem);
@@ -7,7 +7,6 @@
   z-index: 100;
   border: 0.5px solid #4a4a4a;
   cursor: pointer;
-  position: fixed;
   border-radius: 50%;
   background-color: #485e97;
   overflow: hidden;
