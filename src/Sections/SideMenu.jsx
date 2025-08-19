@@ -28,13 +28,18 @@ const SideMenu = () => {
       });
     }
   }, [hamburgerClick]);
+
+  const { height } = useStore();
+
+  const isDesktop = window.innerWidth >= 900;
   return (
     <>
       <Hamburger />
       <Logo />
       <div
         ref={sideMenuRef}
-        className="h-[100vh] w-[100vw] xs:w-[400px] fixed top-0 right-0 bg-[#485e97] flex flex-col transform md:translate-x-[calc(400px+100px)] translate-x-[calc(100vw+100px)] z-30"
+        style={!isDesktop ? { height: `${height}px` } : {}}
+        className="h-[100dvh] w-[100vw] xs:w-[400px] fixed top-0 right-0 bg-[#485e97] flex flex-col transform md:translate-x-[calc(400px+100px)] translate-x-[calc(100vw+100px)] z-30"
       >
         <SideMenuCurve />
         <div className="h-[clamp(4em+60px,5.5vw+60px,5em+60px)] w-full flex items-center justify-center relative">

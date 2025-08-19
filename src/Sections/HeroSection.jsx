@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useStore from "../Hooks/useStore";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -16,6 +17,7 @@ const HeroSection = () => {
     subTextBottom: useRef(),
     connect: useRef(),
   };
+  const { height } = useStore();
 
   useGSAP(() => {
     const textSplits = {
@@ -82,7 +84,7 @@ const HeroSection = () => {
   const heroSectionClasses = `${styles.HeroSectionCon} grid-rows-[2fr_5fr] sm:grid-rows-[2fr_3fr]`;
 
   return (
-    <div className={styles.MainContainer}>
+    <div className={styles.MainContainer} style={{ height: `${height}px` }}>
       <HoverGrid />
       <div className={heroSectionClasses}>
         <div ref={refs.mainTitle} className={styles.HeroSectionTitle}>
