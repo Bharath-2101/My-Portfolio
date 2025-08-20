@@ -1,0 +1,14 @@
+.MainContainer {
+  position: relative;
+  color: #121212;
+  background-color: #ffffff;
+  width: 100vw;
+  padding-top: calc(clamp(4rem, 4.5vw, 5rem));
+  padding-bottom: calc(clamp(4rem, 4.5vw, 5rem) + 60px);
+  .MainTitle {
+    width: 100%;
+    font-weight: 900;
+    padding-left: 3vw;
+    font-size: clamp(1.8rem, 7vw, 4.5rem);
+  }
+}
