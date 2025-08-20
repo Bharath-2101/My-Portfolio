@@ -13,13 +13,13 @@ const SideMenuCurve = () => {
     if (hamburgerClick) {
       gsap.to(pathRef.current, {
         morphSVG: final,
-        duration: 0.8,
+        duration: 1.2,
         ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
     } else {
       gsap.to(pathRef.current, {
         morphSVG: inital,
-        duration: 0.8,
+        duration: 1.2,
         ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
     }
