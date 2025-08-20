@@ -1,3 +1,4 @@
 import { NavLinks, SocialMedia } from "./NavLinks";
+import { Works } from "./Works";
 
-export { NavLinks, SocialMedia };
+export { NavLinks, SocialMedia, Works };
