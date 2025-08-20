@@ -11,6 +11,7 @@ const useStore = create((set) => ({
   height:
     window.innerHeight +
     ((window.screen.height - window.innerHeight) * 62) / 100,
+  width: window.innerWidth,
 }));
 
 export default useStore;
