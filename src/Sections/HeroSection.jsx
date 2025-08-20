@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "../Hooks/useStore";
+import HeroSectionCurve from "../Components/HeroSectionCurve";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -86,6 +87,7 @@ const HeroSection = () => {
   return (
     <div className={styles.MainContainer} style={{ height: `${height}px` }}>
       <HoverGrid />
+      <HeroSectionCurve />
       <div className={heroSectionClasses}>
         <div ref={refs.mainTitle} className={styles.HeroSectionTitle}>
           BHARATH KUMAR
