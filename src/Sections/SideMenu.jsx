@@ -16,14 +16,14 @@ const SideMenu = () => {
       gsap.to(sideMenuRef.current, {
         xPercent: 0,
         x: 0,
-        duration: 0.8,
+        duration: 1.2,
         ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
     } else {
       gsap.to(sideMenuRef.current, {
         xPercent: 100,
         x: 100,
-        duration: 0.8,
+        duration: 1.2,
         ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
     }
