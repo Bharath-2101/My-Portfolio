@@ -5,7 +5,7 @@
   top: calc(clamp(4rem, 4.5vw, 5rem) + 30px);
   position: absolute;
   display: flex;
-  z-index: 0;
+  z-index: 2;
 
   .Column {
     width: 5vw;
