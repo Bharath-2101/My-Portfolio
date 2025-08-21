@@ -87,7 +87,7 @@ const HeroSection = () => {
   return (
     <div className={styles.MainContainer} style={{ height: `${height}px` }}>
       <HoverGrid />
-      <HeroSectionCurve />
+      <HeroSectionCurve fill={"#121212"} filterColor={"rgb(0,0,0,0.7)"} />
       <div className={heroSectionClasses}>
         <div ref={refs.mainTitle} className={styles.HeroSectionTitle}>
           BHARATH KUMAR
