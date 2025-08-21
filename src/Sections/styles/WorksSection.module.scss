@@ -4,11 +4,89 @@
   background-color: #ffffff;
   width: 100vw;
   padding-top: calc(clamp(4rem, 4.5vw, 5rem));
-  padding-bottom: calc(clamp(4rem, 4.5vw, 5rem) + 60px);
+  padding-bottom: calc(clamp(0.8rem, 3vw, 5rem) + 60px);
   .MainTitle {
     width: 100%;
     font-weight: 900;
     padding-left: 3vw;
     font-size: clamp(1.8rem, 7vw, 4.5rem);
+  }
+  .AboutMeButton {
+    padding: 12px 28px;
+    font-weight: 550;
+    font-size: 24px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    pointer-events: all;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 5;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: #485e97;
+      position: absolute;
+      top: 0;
+    }
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+    span {
+      position: relative;
+      transition: width 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+
+      &:nth-child(2) {
+        height: 2px;
+        width: 10%;
+        background: #485e97;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(3) {
+        height: 2px;
+        width: 10%;
+        background: #485e97;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      &:nth-child(4) {
+        height: 2px;
+        width: 10%;
+        background: #485e97;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(5) {
+        height: 2px;
+        width: 10%;
+        background: #485e97;
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+      }
+    }
+    &:hover {
+      span:nth-child(2),
+      span:nth-child(3),
+      span:nth-child(4),
+      span:nth-child(5) {
+        width: 100%;
+      }
+    }
   }
 }
