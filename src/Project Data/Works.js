@@ -17,4 +17,17 @@ const Works = [
   },
 ];
 
-export { Works };
+const mobileWorks = [
+  {
+    title: "VRTL WRLD",
+    Genre: "Reimagined & Development",
+    image: "/images/VirtualWorld.png",
+  },
+  {
+    title: "HETH",
+    Genre: "Design & Development",
+    image: "/images/HethCameras.png",
+  },
+];
+
+export { Works, mobileWorks };
