@@ -8,7 +8,7 @@ import gsap from "gsap";
 const WorksDesktop = () => {
   const [activeProject, setActiveProject] = useState(null);
   return (
-    <div id="hello" className={`${styles.Container} `}>
+    <div className={`${styles.Container} `}>
       <div
         onMouseLeave={() => setActiveProject(null)}
         className={`${styles.WorksListContainer}`}
