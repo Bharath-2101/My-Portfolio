@@ -34,6 +34,7 @@
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  z-index: 2;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 
   &::before,
