@@ -34,7 +34,11 @@ const WorksSection = () => {
         </div>
       </div>
 
-      <HeroSectionCurve fill="#FFFFFF" filterColor="rgba(255,255,255,0.7)" />
+      <HeroSectionCurve
+        fill="#FFFFFF"
+        filterColor="rgba(255,255,255,0.7)"
+        styles="xs:block hidden"
+      />
     </div>
   );
 };
