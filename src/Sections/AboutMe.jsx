@@ -4,7 +4,6 @@ import styles from "./styles/AboutMe.module.scss";
 const AboutMe = () => {
   return (
     <div className={`${styles.Container}`}>
-      {/* MainTitle */}
       <div className={`${styles.MainTitle}`}>ABOUT ME</div>
       <div className={styles.AboutMeButton}>
         <span>ABOUT ME</span>
