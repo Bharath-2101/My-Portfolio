@@ -6,7 +6,7 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin);
 
-const HeroSectionCurve = ({ fill, filterColor }) => {
+const HeroSectionCurve = ({ fill, filterColor, styles }) => {
   const pathRef = useRef(null);
   const containerRef = useRef(null);
   const animationRef = useRef(null);
@@ -96,7 +96,7 @@ const HeroSectionCurve = ({ fill, filterColor }) => {
         bottom: -dimensions.height + 0.5,
         left: -dimensions.width * 0.25,
       }}
-      className="absolute z-10 pointer-events-none"
+      className={`${styles} absolute z-10 pointer-events-none`}
     >
       <svg className="h-full w-full" fill={fill} preserveAspectRatio="none">
         <path
