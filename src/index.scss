@@ -1,4 +1,5 @@
 /***************fonts***************/
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 @font-face {
   font-family: "Bharath Sans";
   src: url("/fonts/NeueMontreal-Light.otf") format("opentype");
@@ -77,9 +78,9 @@ a {
   position: relative;
   &::after {
     content: "";
-    height: 0.5px;
+    height: 1.5px;
     width: 100%;
-    background: #fff;
+    background: #121212;
     position: absolute;
     transform-origin: right;
     transform: scaleX(0);
@@ -93,4 +94,8 @@ a {
       transform-origin: left;
     }
   }
+}
+
+.footerFont {
+  font-family: "Bricolage Grotesque", sans-serif;
 }
