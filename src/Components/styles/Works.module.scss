@@ -1,0 +1,38 @@
+.Container {
+  position: relative;
+  width: 100dvw;
+  margin-top: 60px;
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+  .CardsHolder {
+    display: grid;
+    .Card {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(15px, 3vw, 45px);
+      .CardImgCon {
+        width: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #12121215;
+        .CardImg {
+          width: 80%;
+        }
+      }
+      .CardDesc {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(8px, 1.6vw, 23px);
+        .MainTitle {
+          font-size: calc(clamp(1.5em, 2.3vw, 2.5em) * 1.125);
+        }
+        .SubTitleCon {
+          display: grid;
+          grid-template-columns: 4fr 1fr;
+        }
+      }
+    }
+  }
+}
