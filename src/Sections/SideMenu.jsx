@@ -70,7 +70,12 @@ const SideMenu = () => {
           <div className="flex flex-row pt-[40px] md:pt-0 md:items-center justify-evenly relative text-[#fff]">
             <span className="h-[1px] w-[80%] bg-[#4a4a4a] absolute top-[0%] left-[10%]" />
             {SocialMedia.map((media, index) => (
-              <a key={index} className="text-[12px]">
+              <a
+                href={media.link}
+                target="_blank"
+                key={index}
+                className="text-[12px]"
+              >
                 <span className="UnderlineEffect opacity-40">
                   {media.title}
                 </span>
