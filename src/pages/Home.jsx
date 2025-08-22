@@ -9,12 +9,9 @@ import Loader from "../Components/Loader";
 const Home = () => {
   return (
     <div>
-      <Loader />
-      <SideMenu />
       <HeroSection />
       <AboutMe />
       <WorksSection />
-      <FooterSection />
     </div>
   );
 };
