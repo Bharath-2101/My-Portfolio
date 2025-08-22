@@ -6,8 +6,9 @@ import MorphSVGPlugin from "gsap/MorphSVGPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
+import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
-gsap.registerPlugin(MorphSVGPlugin, SplitText, ScrollTrigger);
+gsap.registerPlugin(MorphSVGPlugin, SplitText, ScrollTrigger, DrawSVGPlugin);
 
 const App = () => {
   const isTablet = window.innerWidth > 768;
