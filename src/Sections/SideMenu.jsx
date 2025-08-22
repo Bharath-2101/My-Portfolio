@@ -35,7 +35,6 @@ const SideMenu = () => {
   return (
     <>
       <Hamburger />
-      <Logo />
       <div
         ref={sideMenuRef}
         style={!isDesktop ? { height: `${height}px` } : {}}
