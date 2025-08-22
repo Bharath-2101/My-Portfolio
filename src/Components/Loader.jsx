@@ -6,6 +6,7 @@ import useStore from "../Hooks/useStore";
 
 const Loader = () => {
   const loader = useRef();
+  const path = useRef();
   const { height } = useStore();
   const isDesktop = window.innerWidth >= 900;
   useGSAP(() => {
@@ -19,22 +20,29 @@ const Loader = () => {
       tl.from(path, { drawSVG: "0%" }, ">");
     });
     tl.to(loader.current, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      duration: 0.5,
+      yPercent: -100,
+      duration: 1.2,
       ease: "cubic-bezier(0.76, 0, 0.24, 1)",
-    });
+    }).to(
+      path.current,
+      {
+        morphSVG: "M0 0 L100 0 L100 100 Q50 100 0 100 Z",
+        duration: 1.2,
+        ease: "cubic-bezier(0.76, 0, 0.24, 1)",
+      },
+      "<"
+    );
   });
   return (
     <div
       style={{
-        ...(!isDesktop ? { height: `${height}px` } : {}),
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        ...(!isDesktop ? { height: `${height + height / 5}px` } : {}),
       }}
       ref={loader}
-      className={`${styles.Container} h-[100dvh] flex-col sm:flex-row`}
+      className={`${styles.Container} h-[120dvh] flex-col sm:flex-row`}
     >
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -49,7 +57,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -64,7 +72,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -79,7 +87,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -94,7 +102,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -109,7 +117,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -124,7 +132,7 @@ const Loader = () => {
         />
       </svg>
       <svg
-        className="aspect-square w-[15.5%] xs:w-[8%]"
+        className="aspect-square w-[15.5%] xs:w-[8%] z-2  relative"
         viewBox="0 0 102 102"
         preserveAspectRatio="none"
         fill="none"
@@ -136,6 +144,17 @@ const Loader = () => {
           strokeWidth={3}
           strokeLinecap="round"
           strokeLinejoin="round"
+        />
+      </svg>
+      <svg
+        className=" h-[100%] w-[100%] absolute top-0 left-0 z-0"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          ref={path}
+          d="M0 0 L100 0 L100 100 Q50 70 0 100 Z"
+          fill="#f2f2f2"
         />
       </svg>
     </div>
