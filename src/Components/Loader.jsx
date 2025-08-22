@@ -2,9 +2,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import styles from "./styles/Loader.module.scss";
+import useStore from "../Hooks/useStore";
 
 const Loader = () => {
   const loader = useRef();
+  const { height } = useStore();
+  const isDesktop = window.innerWidth >= 900;
   useGSAP(() => {
     const tl = gsap.timeline({
       defaults: { duration: 0.6, ease: "cubic-bezier(0.76, 0, 0.24, 1)" },
@@ -23,7 +26,10 @@ const Loader = () => {
   });
   return (
     <div
-      style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+      style={{
+        ...(!isDesktop ? { height: `${height}px` } : {}),
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      }}
       ref={loader}
       className={`${styles.Container} h-[100dvh] flex-col sm:flex-row`}
     >
