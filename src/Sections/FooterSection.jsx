@@ -14,17 +14,25 @@ const FooterSection = () => {
         className={`${styles.SocialLinksCon} grid grid-cols-2 gap-10 sm:flex sm:flex-row sm:justify-evenly sm:items-center mt-[60px]`}
       >
         {SocialMediaLinks.map((mediaLinks, index) => (
-          <div key={index} className={`${styles.LinkCon}`}>
+          <a
+            href={mediaLinks.link}
+            target="_blank"
+            key={index}
+            className={`${styles.LinkCon}`}
+          >
             <span>{mediaLinks.title}</span>
             <span>{mediaLinks.title}</span>
-          </div>
+          </a>
         ))}
       </div>
       <div className={`${styles.FrameText}`}>
         <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center text-[#0B235D]">
-          <span className="UnderlineEffect footerFont hover:scale-95 transition-all duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]">
+          <a
+            href="mailto:bharthkamatham143@gmail.com"
+            className="UnderlineEffect footerFont hover:scale-95 transition-all duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+          >
             Hello@Bharath
-          </span>
+          </a>
         </div>
         <img src="/images/Footerframe.svg" alt="frame" className="w-full" />
       </div>
