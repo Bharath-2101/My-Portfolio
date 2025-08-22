@@ -1,17 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import gsap from "gsap";
 import MorphSVGPlugin from "gsap/MorphSVGPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
+import Lenis from "@studio-freight/lenis";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact.jsx";
+import Layout from "./Sections/Layout";
+import Loader from "./Components/Loader.jsx";
 
 gsap.registerPlugin(MorphSVGPlugin, SplitText, ScrollTrigger, DrawSVGPlugin);
 
 const App = () => {
   const isTablet = window.innerWidth > 768;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5400);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 5,
@@ -38,14 +51,24 @@ const App = () => {
       lenis.destroy();
       gsap.ticker.remove((time) => lenis.raf(time * 1000));
     };
-  }, []);
+  }, [isTablet]);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      )}
+    </>
   );
 };
 
