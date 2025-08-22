@@ -8,10 +8,12 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "../Hooks/useStore";
 import HeroSectionCurve from "../Components/HeroSectionCurve";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const refs = {
     mainTitle: useRef(),
     subTextTop: useRef(),
@@ -117,7 +119,11 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="h-full flex justify-center items-center">
-            <div ref={refs.connect} className={styles.ContactButton}>
+            <div
+              ref={refs.connect}
+              className={styles.ContactButton}
+              onClick={() => navigate("/About")}
+            >
               <span className="opacity-50">CONNECT</span>
               {[...Array(4)].map((_, i) => (
                 <span key={i} />
