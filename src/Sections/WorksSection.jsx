@@ -3,8 +3,10 @@ import styles from "./styles/WorksSection.module.scss";
 import WorksDesktop from "../Components/WorksDesktop";
 import Works from "../Components/Works";
 import HeroSectionCurve from "../Components/HeroSectionCurve";
+import { useNavigate } from "react-router-dom";
 
 const WorksSection = () => {
+  const navigate = useNavigate();
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
@@ -24,7 +26,10 @@ const WorksSection = () => {
         className="w-full flex justify-center items-center"
         style={{ marginTop: `calc(clamp(4rem, 4.5vw, 5rem) + 60px)` }}
       >
-        <div className={styles.AboutMeButton}>
+        <div
+          className={styles.AboutMeButton}
+          onClick={() => navigate("/works")}
+        >
           <span>
             ALL WORKS<sup className="opacity-50">11</sup>
           </span>
