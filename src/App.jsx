@@ -8,7 +8,7 @@ import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 import Lenis from "@studio-freight/lenis";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact.jsx";
+import Projects from "./pages/Projects.jsx";
 import Layout from "./Sections/Layout";
 import Loader from "./Components/Loader.jsx";
 
@@ -63,7 +63,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
-              <Route path="contact" element={<Contact />} />
+              <Route path="works" element={<Projects />} />
             </Route>
           </Routes>
         </BrowserRouter>
